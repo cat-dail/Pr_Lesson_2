@@ -1,0 +1,4 @@
+INFO:root:"test_walk" выполнен успешно
+WARNING:root:Неверный тип данных для объекта Runner
+INFO:root:"test_walk" выполнен успешно
+WARNING:root:Неверная скорость для Runner

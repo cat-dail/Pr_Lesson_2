@@ -8,7 +8,7 @@ bot = Bot(token=api)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
 
-@dp.message_handler(text=['?', 'ff', 'hello'])
+@dp.message_handler(text=['?', 'ff', 'hello', 'привет', 'Привет'])
 async def urban_message(message):
     await message.answer("Введите команду /start, чтобы начать общение.")
 

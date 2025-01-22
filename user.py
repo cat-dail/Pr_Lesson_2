@@ -1,25 +1,17 @@
-from fastapi import APIRouter
-
-router = APIRouter(prefix='/user', tags=['user'])
-
-@router.get("/")
-async def get_all_users():
-    pass
-
-@router.get("/user_id")
-async def user_by_id():
-    pass
-
-@router.post("/create")
-async def create_user():
-    pass
+from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy.orm import relationship
+from app.backend.db import Base
 
 
-@router.put("/update")
-async def update_user():
-    pass
+class User(Base):
+    __tablename__ = 'users'# Имя таблицы в базе данных
+    id = Column(Integer, primary_key=True, index=True) # Уникальный идентификатор
+    username = Column(String) # Название продукта
+    firstname = Column(String) # Человекочитаемый URL
+    lastname = Column(String)
+    age = Column(Integer)
+    slug = Column(String, unique=True, index=True)
+    tasks = relationship('Task', back_populates='users')
 
-
-@router.delete("/delete")
-async def delete_user():
-    pass
+from sqlalchemy.schema import CreateTable
+print(CreateTable(User.__table__))

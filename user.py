@@ -6,8 +6,8 @@ from app.backend.db import Base
 class User(Base):
     __tablename__ = 'users'# Имя таблицы в базе данных
     id = Column(Integer, primary_key=True, index=True) # Уникальный идентификатор
-    username = Column(String) # Название продукта
-    firstname = Column(String) # Человекочитаемый URL
+    username = Column(String) 
+    firstname = Column(String) 
     lastname = Column(String)
     age = Column(Integer)
     slug = Column(String, unique=True, index=True)
